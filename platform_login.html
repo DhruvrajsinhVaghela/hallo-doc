@@ -9,20 +9,14 @@
     <script src="js\bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css\platform_login.css">
     <script src="js\platform_login.js"></script>
-    <style>
-        form i {
-            margin-left: -30px;
-            cursor: pointer;
-        }
-    </style>
+    
 </head>
-<!-- data-bs-theme="dark"> -->
 
-<body id="body">
-    <div class="container-fluid">
+<body >
+    <div class="container-fluid main-container">
 
         <div class="row ">
-            <div class="col-lg-6 vh-100 p-0">
+            <div class="col-lg-6 vh-100 p-0 left-col">
                 <img class="supportive-img" src="images\11116016_415.jpg" alt="">
             </div>
             <div class="col-lg-6 right-col">
@@ -39,10 +33,10 @@
                 <img class="logo-img" src="images\Fig56._Patient_site_1.png" alt="">
                 <h3 id="heading">Login To Your Account</h3>
                 <div class="form-floating">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
                     <label for="floatingInput" id="username-input">Username</label>
-                    <span class="input-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <span class="input-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
                             <path fill-rule="evenodd"
                                 d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
@@ -52,17 +46,16 @@
                 <div class="form-floating ">
                     <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
                     <label for="floatingPassword">Password</label>
-                    <span class="input-icon" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-                        <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z"/>
-                        <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"/>
-                      </svg>
-                </span>
+                    <button class="input-icon" onclick="showhide()"><img src="images\eye.svg" id="eye" alt="">
+                    </button>
                 </div>
                 <button type="button" class="btn btn-primary login-btn ">Login</button>
-                <a href="" class="forgot-pw">Forgot Password?</a>
+                <a href="forgot_pw.html" class="forgot-pw">Forgot Password?</a>
 
-                <div>
-                    <a class="text-decoration-none text-dark"><p id="terms">Terms of Conditions <span class="vr" id="vr1"></span> Privacy Policy</p></a>
+                <div class="terms-div">
+                    <a class="text-decoration-none text-dark">
+                        <p id="terms">Terms of Conditions <span class="vr" id="vr1"></span> Privacy Policy</p>
+                    </a>
                 </div>
             </div>
         </div>

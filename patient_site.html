@@ -4,20 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>platform-login page</title>
+    <title>Document</title>
     <link rel="stylesheet" href="css\bootstrap.min.css">
     <script src="js\bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="css\platform_login.css">
-    <script src="js\platform_login.js"></script>
+    <link rel="stylesheet" href="css\patient_login.css">
+    <script src="js\patient_site.js"></script>
 </head>
-<body id="body">
-    <div class="container-fluid main-container">
 
-        <div class="row ">
-            <div class="col-lg-6 vh-100 p-0 left-col">
-                <img class="supportive-img" src="images\11116016_415.jpg" alt="">
-            </div>
-            <div class="col-lg-6 right-col">
+<body>
+    <div class="container-fluid main-container">
+        <div class="row  d-flex justify-content-center vh-100">
+            <div class="col-xl-4  main-column ">
                 <div class="darkmode-div">
                     <button id="darkmode-btn" onclick="myFunction()">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -27,22 +24,14 @@
                         </svg>
                     </button>
                 </div>
-                <img class="logo-img" src="images\Fig56._Patient_site_1.png" alt="">
-                <h3 id="heading">Reset Your Password</h3>
-                <div class="form-floating">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                    <label for="floatingInput" id="username-input">Username</label>
-                    <span class="input-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                            fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
-                            <path fill-rule="evenodd"
-                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
-                        </svg>
-                    </span>
 
-                </div>
-                <button type="button" class="btn btn-primary login-btn ">Reset Password</button>
-                <a href="platform_login.html" class="forgot-pw"> &lt; Back To Login</a>
+                <img class="logo-img" src="images\Fig56._Patient_site_1.png" alt="">
+
+                <button type="button" onclick="location.href='submit_request.html'" class="btn btn-primary login-btn mt-auto">Submit A Request</button>
+                <button type="button" onclick="location.href='patient_login.html'"
+                    class="btn btn-primary login-btn1">Registered Patients</button>
+
+
                 <div class="terms-div">
                     <a class="text-decoration-none text-dark">
                         <p id="terms">Terms of Conditions <span class="vr" id="vr1"></span> Privacy Policy</p>
@@ -51,9 +40,6 @@
             </div>
         </div>
     </div>
-
-
-
 </body>
 
 </html>
