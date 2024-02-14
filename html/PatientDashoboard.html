@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create patient request form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <link rel="stylesheet" href="\css\bootstrap.min.css">
+    <script src="\js\bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="..\css\PatientDashboard.css">
+    <script src="\js\PatientInfoForm.js"></script>
+</head>
+
+<style>
+    .nav-tabs .nav-item.show .nav-link,
+    .nav-tabs .nav-link.active {
+        border: 0;
+        border-bottom: 2px solid #08BCEB;
+        color: #08BCEB;
+    }
+
+    .nav-link {
+        color: black;
+    }
+
+    .dashboard-div {
+        width: 95%;
+    }
+
+    .table>:not(caption)>*>* {
+        background-color: transparent;
+    }
+
+    .btn-close {
+        --bs-btn-close-color: white !important;
+    }
+
+    .navbar {
+        padding: 0;
+    }
+
+</style>
+
+<body onload="load()" class="bg-light">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class=" modal-dialog modal-dialog-centered">
+            <div class="modal-content ">
+                <!-- <div class="">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>-->
+                <div class="d-flex justify-content-between bg-info border-bottom-0 mb-1 border-danger rounded-top p-3">
+                    <h5 class="text-white">Create New Request</h5>
+                    <button type="button" class="btn-close text-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+
+                <p>Here,I want to create new request for...</p>
+                <div class="d-flex justify-content-center m-auto">
+                    <div class="">
+                        <button class="btn logout-btn mb-1">
+                            ME
+                        </button>
+                        <button class="btn logout-btn mb-1 ms-2">
+                            Some One Else
+                        </button>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center align-items-center my-3 ms-auto">
+                    <button class="btn logout-btn me-3">
+                        Continue
+                    </button>
+                    <button type="button" class="btn" data-bs-dismiss="modal">
+                        Cancle
+                    </button>
+
+                    <!-- <button type="button" class="btn btn-primary">OK</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <img class="logo-img-1" src="\images\Fig56._Patient_site_1.png" alt="">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0 d-flex justify-content-end w-100">
+              <li class="nav-item">
+                <p class="mt-1 me-3">welcome <span class="fw-bold">Tests Testing</span></p>
+              </li>
+              <li class="nav-item">
+                <button class="btn logout-btn me-3">
+                    Logout
+                </button>
+              </li>
+              <li class="nav-item dropdown">
+                <button id="darkmode-btn" onclick="myFunction()">
+                    <img class="darkmode-img text-info" src="\images\moon.svg" alt="">
+                </button>
+              </li>
+              
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+    <ul class="nav nav-tabs bg-white" id="myTab" role="tablist">
+        <li class="nav-item " role="presentation">
+            <button class="nav-link active " id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Dashboard</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Profile</button>
+        </li>
+    </ul>
+    <div class="tab-content mt-5 m-auto dashboard-div bg-light " id="myTabContent">
+
+        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+            tabindex="0">
+            <h4>Medical History</h4>
+            <div class="border rounded bg-white">
+                <div class=" d-flex justify-content-end my-3 me-3">
+                    <button class="btn logout-btn mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Create New Request
+                    </button>
+                </div>
+                <div class="d-none d-sm-block">
+                    <table class="table">
+                        <thead>
+                            <div>
+                                <tr class="bg-light">
+    
+                                    <th scope="col">Created Date</th>
+                                    <th scope="col">Current Status</th>
+                                    <th scope="col">Document</th>
+                                </tr>
+                            </div>
+                        </thead>
+                        <tbody>
+                            <tr>
+    
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+    
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+    
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">ab..
+        </div>
+    </div>
+    <div class="accordion d-sm-none dashboard-div m-auto" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Accordion Item #1
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Accordion Item #2
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Accordion Item #3
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+
+    <div id="footer">
+        <div class="mt-3 me-3">
+            <a href="" class="text-decoration-none" id="terms1"> Terms of Conditions </a>
+            <span class="vr " id="vr1"></span>
+            <a href="" class="text-decoration-none" id="terms2">Privacy Policy</a>
+        </div>
+    </div>
+   
+</body>
+
+</html>

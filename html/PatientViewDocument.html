@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>create patient request form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <link rel="stylesheet" href="\css\bootstrap.min.css">
+  <script src="\js\bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="css\PatientInfoForm.css">
+  
+  <script src="\js\PatientInfoForm.js"></script>
+</head>
+
+<style>
+  .nav-tabs .nav-item.show .nav-link,
+  .nav-tabs .nav-link.active {
+    border: 0;
+    border-bottom: 2px solid #08BCEB;
+    color: #08BCEB;
+  }
+
+  .nav-link {
+    color: black;
+  }
+
+  .dashboard-div {
+    width: 80%;
+  }
+
+  .table>:not(caption)>*>* {
+    background-color: transparent;
+  }
+
+  .btn-close {
+    --bs-btn-close-color: white !important;
+  }
+
+  .navbar {
+    padding: 0;
+  }
+
+  .upload-btn {
+    background-color: #00bde7;
+    color: white;
+    border-radius: 0px 5px 5px 0px;
+  }
+
+  .document-div {
+    width: 90%;
+  }
+  #footer{
+    position: relative;
+left: 0;
+bottom: 0;
+width: 100%;
+height: 8vh;
+background-color: black;
+color: white;
+text-align: right;
+
+  }
+</style>
+
+<body onload="load()" class="bg-light">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <img class="logo-img-1" src="\images\Fig56._Patient_site_1.png" alt="">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0 d-flex justify-content-end w-100">
+          <li class="nav-item">
+            <p class="mt-1 me-3">welcome <span class="fw-bold">Tests Testing</span></p>
+          </li>
+          <li class="nav-item">
+            <button class="btn logout-btn me-3">
+              Logout
+            </button>
+          </li>
+          <li class="nav-item dropdown">
+            <button id="darkmode-btn" onclick="myFunction()">
+              <img class="darkmode-img text-info" src="\images\moon.svg" alt="">
+            </button>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+  <ul class="nav nav-tabs bg-white" id="myTab" role="tablist">
+    <li class="nav-item " role="presentation">
+      <button class="nav-link active " id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button"
+        role="tab" aria-controls="home-tab-pane" aria-selected="true">Dashboard</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button"
+        role="tab" aria-controls="profile-tab-pane" aria-selected="false">Profile</button>
+    </li>
+  </ul>
+  <div class="tab-content mt-5 m-auto dashboard-div bg-light " id="myTabContent">
+
+    <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+
+      <div class="d-flex justify-content-between">
+        <h4>Documents</h4>
+        <button class="btn logout-btn mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          &lt; Back
+        </button>
+      </div>
+
+      <div class="border rounded bg-white d-flex justify-content-center">
+        <div class=" document-div">
+          <p>Patient Name</p>
+          <p><span class="text-info">Testing Tests</span>
+            (123321564564)</p>
+          <p>chech here for any files that you or the doctors of your subsequents requestors have attached for you to
+            review.</p>
+          <div class="border rounded bg-light">
+            <label for="fileinput" class="selectfile rounded d-flex justify-content-between">
+              <p class="m-2">Select File</p>
+              <input type="file" id="fileinput" style="display: none;">
+              <div class="upload-btn p-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                  class="bi bi-cloud-arrow-up" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M7.646 5.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 6.707V10.5a.5.5 0 0 1-1 0V6.707L6.354 7.854a.5.5 0 1 1-.708-.708z" />
+                  <path
+                    d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383m.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z" />
+                </svg>
+                <span class="d-none d-sm-inline">Upload</span>
+              </div>
+            </label>
+          </div>
+          <div class="d-flex justify-content-between my-3">
+            <h4>Documents</h4>
+            <button class="btn logout-btn mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <span class="d-none d-sm-block">Download All</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-cloud-arrow-down-fill d-sm-none text-info" viewBox="0 0 16 16">
+                <path
+                  d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2m2.354 6.854-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.293V5.5a.5.5 0 0 1 1 0v3.793l1.146-1.147a.5.5 0 0 1 .708.708" />
+              </svg>
+            </button>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+
+
+
+      <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+
+        <div class="d-flex justify-content-between">
+          <h4>User Profile</h4>
+          <button class="btn logout-btn mb-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            &lt; Back
+          </button>
+        </div>
+
+        <div class="border rounded bg-white d-flex justify-content-center">
+          <div class=" document-div">
+
+            <div class="row">
+              <p class="h4 mt-4">General Information</p>
+
+
+              <div class="form-floating col-lg-6 mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="First Name">
+                <label class="ms-2 " for="floatingInput" id="username-input">Your First Name</label>
+
+              </div>
+              <div class="form-floating col-lg-6 mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="First Name">
+                <label class="ms-2 " for="floatingInput" id="username-input">Your Last Name</label>
+
+              </div>
+              <div class="form-floating col-lg-6">
+                <input type="date" class="form-control" id="floatingPassword" placeholder="Last Name">
+                <label class="ms-2 text-secondary" for="floatingPassword">Date Of Birth</label>
+
+              </div>
+
+            </div>
+            <div class="row">
+
+              <p class="h4 mt-4">Contact information</p>
+
+
+
+              <div class="form-floating mb-3 col-lg-2">
+                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label class="ms-2 text-secondary" for="floatingInput">First Name</label>
+              </div>
+              <div class="form-floating col-lg-4 phone-code">
+                <input type="tel" class="form-control phone-input phone" id="phone">
+              </div>
+              <div class="form-floating col-lg-6">
+                <input type="email" class="form-control" id="floatingPassword" placeholder="Last Name">
+                <label class="ms-2 text-secondary" for="floatingPassword">Email</label>
+
+              </div>
+
+            </div>
+
+            <div class="row">
+              <p class="h4 mt-4">Location Information</p>
+
+
+              <div class="form-floating col-lg-6 mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="First Name">
+                <label class="ms-2 " for="floatingInput" id="username-input">street</label>
+
+              </div>
+              <div class="form-floating col-lg-6 mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="First Name">
+                <label class="ms-2 " for="floatingInput" id="username-input">city</label>
+
+              </div>
+              <div class="form-floating col-lg-6 mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="First Name">
+                <label class="ms-2 " for="floatingInput" id="username-input">state</label>
+
+              </div>
+              <div class="form-floating col-lg-4">
+                <input type="text" class="form-control" id="floatingInput" placeholder="First Name">
+                <label class="ms-2 " for="floatingInput" id="username-input">zip code</label>
+
+              </div>
+              <div class="form-floating col-lg-2">
+                <input type="text" class="form-control" id="floatingInput" placeholder="First Name">
+                <label class="ms-2 " for="floatingInput" id="username-input">Room</label>
+
+              </div>
+              <div class="w-100 d-flex justify-content-end">
+                <button class="btn logout-btn">
+                  Edit
+                </button>
+              </div>
+            </div>
+            
+          </div>
+          
+        </div>
+
+
+
+
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+
+
+  <div id="footer" >
+    <div class="h-25">
+
+    </div>
+    <div class="">
+        <a href="" class="text-decoration-none " id="terms1"> Terms of Conditions </a>
+        <span class="vr mx-3" id="vr1"></span>
+        <a href="" class="text-decoration-none" id="terms2">Privacy Policy</a>
+
+    </div>
+    </div>
+
+</body>
+
+</html>

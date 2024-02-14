@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="\css\bootstrap.min.css">
+    <script src="\js\bootstrap.bundle.min.js"></script>
+</head>
+<script>
+
+const load = () => {
+    document.getElementById("terms1").style.color = "#08BCEB";
+    document.getElementById("terms2").style.color = "#08BCEB";
+    const phoneInputField = document.getElementsByClassName("phone");
+    for (let i = 0; i < phoneInputField.length; ++i) {
+        const phoneInput = window.intlTelInput(phoneInputField[i], {
+            utilsScript:
+                "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        });
+    }
+    let btn = document.getElementById('btn_modal');
+    btn.setAttribute('data-bs-target', '#exampleModal');
+    btn.setAttribute('data-bs-toggle', 'modal');
+    btn.click();
+}
+
+</script>
+<body onload="load()" >
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class=" modal-dialog modal-dialog-centered">
+                <div class="modal-content ">
+                    <!-- <div class="">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>-->
+                    <div class="d-flex justify-content-between bg-info border-bottom-0 mb-1 border-danger rounded-top p-3">
+                        <h5 class="text-white">Cacnle Confirmation</h5>
+                        <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="w-75 mx-auto">
+                        <p>Test Test</p>
+                    <div class="">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Please Provide A Brief Explanation Of Your Cancelation"></textarea>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center my-3 ms-auto">
+                        <button class="btn logout-btn me-3">
+                            Confirm
+                        </button>
+                        <button type="button" class="btn" data-bs-dismiss="modal">
+                            Cancel
+                        </button>
+
+                        <!-- <button type="button" class="btn btn-primary">OK</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="w-75 m-auto d-flex flex-column align-items-center vh-100">
+        <div>
+            <p>To provide best medical service,We cannot determine the cost right away.if you agree to our service,so we
+                will provide care and follow-up untill all care is completed.So with this points,if you like us to provide
+                care to you click on "Agree" and we'll get started immediately,if you do not agree simply click "Cancel".
+            </p>
+        </div>
+        <div class="w-75 d-flex justify-content-between">
+            <button type="button" class="btn btn-success">I Agree</button>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Cancel</button>
+        </div>
+    </div>
+</body>
+
+</html>

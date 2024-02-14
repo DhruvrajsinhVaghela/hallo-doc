@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Edit Form Example</title>
+    <!-- Add your CSS styling here (if needed) -->
+</head>
+<body>
+    <form id="myForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" disabled>
+        <!-- Other form fields (password, email, etc.) go here -->
+        <button id="editButton">Edit</button>
+        <button id="saveButton" style="display: none;">Save</button>
+        <button id="cancelButton" style="display: none;">Cancel</button>
+    </form>
+
+    <script>
+        const editButton = document.getElementById('editButton');
+        const saveButton = document.getElementById('saveButton');
+        const cancelButton = document.getElementById('cancelButton');
+        const formFields = document.querySelectorAll('#myForm input');
+
+        editButton.addEventListener('click', () => {
+            formFields.forEach((field) => {
+                field.disabled = !field.disabled;
+            });
+            editButton.style.display = 'none';
+            saveButton.style.display = 'inline-block';
+            cancelButton.style.display = 'inline-block';
+        });
+
+        saveButton.addEventListener('click', () => {
+            // Handle saving logic (e.g., submit form data)
+            // You can add your custom save functionality here
+            console.log('Form data saved!');
+            // Optionally, reset the form fields to disabled state
+            formFields.forEach((field) => {
+                field.disabled = true;
+            });
+            editButton.style.display = 'inline-block';
+            saveButton.style.display = 'none';
+            cancelButton.style.display = 'none';
+        });
+
+        cancelButton.addEventListener('click', () => {
+            // Handle cancel logic (e.g., discard changes)
+            // You can add your custom cancel functionality here
+            console.log('Changes discarded.');
+            // Optionally, reset the form fields to disabled state
+            formFields.forEach((field) => {
+                field.disabled = true;
+            });
+            editButton.style.display = 'inline-block';
+            saveButton.style.display = 'none';
+            cancelButton.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
